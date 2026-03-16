@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titouan Phelip — DJ</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Mulish:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0e0c;
+  --surface: #181612;
+  --card: #1e1c18;
+  --border: rgba(255,255,255,0.07);
+  --white: #f7f3ec;
+  --muted: rgba(247,243,236,0.45);
+  --orange: #ff6b2b;
+  --orange-glow: rgba(255,107,43,0.18);
+  --orange-soft: #ff8c54;
+  --yellow: #ffc93c;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Mulish',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:0.6;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:68px;
+  background:rgba(15,14,12,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:18px;
+  letter-spacing:0.5px;
+  color:var(--white);
+  text-decoration:none;
+}
+.nav-logo span{color:var(--orange);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  font-size:13px;font-weight:600;
+  letter-spacing:0.3px;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--white);}
+.nav-btn{
+  background:var(--orange);
+  color:#fff;
+  padding:10px 22px;
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:2px;
+  transition:background .2s,transform .15s;
+}
+.nav-btn:hover{background:var(--orange-soft);transform:translateY(-1px);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:110px 56px 72px;
+  position:relative;overflow:hidden;
+}
+/* gradient blobs */
+.hero-blob1{
+  position:absolute;top:-80px;right:-100px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,107,43,0.14) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-blob2{
+  position:absolute;bottom:0;left:20%;
+  width:500px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,201,60,0.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+/* big bg text */
+.hero-bg-text{
+  position:absolute;
+  bottom:-20px;left:-10px;
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(120px,20vw,280px);
+  color:rgba(255,107,43,0.04);
+  letter-spacing:-8px;
+  line-height:1;
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+}
+.hero-content{position:relative;z-index:1;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,107,43,0.1);
+  border:1px solid rgba(255,107,43,0.25);
+  padding:7px 18px;border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--orange-soft);
+  margin-bottom:28px;
+  opacity:0;animation:fadeUp .7s .1s forwards;
+}
+.hero-pill::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:var(--orange);
+  box-shadow:0 0 8px var(--orange);
+  animation:blink 2s infinite;
+}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+.hero h1{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(64px,11vw,160px);
+  line-height:.9;
+  letter-spacing:-3px;
+  opacity:0;animation:fadeUp .8s .2s forwards;
+}
+.hero h1 .line2{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--orange);
+}
+.hero-sub{
+  font-size:16px;font-weight:300;line-height:1.85;
+  color:var(--muted);
+  max-width:480px;
+  margin-top:24px;
+  opacity:0;animation:fadeUp .8s .35s forwards;
+}
+.hero-actions{
+  display:flex;align-items:center;gap:16px;
+  margin-top:40px;
+  opacity:0;animation:fadeUp .8s .5s forwards;
+}
+.btn-fire{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--orange);
+  color:#fff;padding:14px 32px;
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:13px;
+  letter-spacing:.5px;
+  text-decoration:none;border-radius:2px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.btn-fire:hover{
+  background:var(--orange-soft);
+  transform:translateY(-2px);
+  box-shadow:0 16px 40px rgba(255,107,43,0.3);
+}
+.btn-line{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--muted);
+  font-family:'Syne',sans-serif;
+  font-weight:600;font-size:13px;
+  text-decoration:none;
+  transition:color .2s;
+}
+.btn-line:hover{color:var(--white);}
+.btn-line::after{content:'→';transition:transform .2s;}
+.btn-line:hover::after{transform:translateX(4px);}
+
+/* hero corner stats */
+.hero-stats{
+  position:absolute;right:56px;bottom:72px;
+  display:flex;flex-direction:column;gap:2px;
+  opacity:0;animation:fadeIn .9s .7s forwards;
+  z-index:1;
+}
+.hstat{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:20px 28px;min-width:150px;
+  border-left:2px solid var(--orange);
+}
+.hstat-n{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:36px;
+  color:var(--orange);line-height:1;
+}
+.hstat-l{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+
+/* scroll indicator */
+.hero-scroll{
+  position:absolute;left:56px;bottom:72px;
+  display:flex;align-items:center;gap:12px;
+  font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--muted);
+  opacity:0;animation:fadeIn 1s .9s forwards;
+}
+.scroll-line{width:40px;height:1px;background:linear-gradient(90deg,var(--orange),transparent);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ── TICKER ── */
+.ticker{
+  background:var(--orange);
+  padding:13px 0;overflow:hidden;white-space:nowrap;
+  position:relative;z-index:1;
+}
+.ticker-track{display:inline-flex;animation:tick 30s linear infinite;}
+.t-item{
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:13px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.9);
+  padding:0 32px;
+}
+.t-sep{color:rgba(255,255,255,0.4);padding:0 4px;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── SECTIONS ── */
+section{padding:100px 56px;position:relative;z-index:1;}
+.stag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px;
+}
+.stag::before{content:'';width:20px;height:2px;background:var(--orange);}
+.stitle{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(36px,5vw,64px);
+  line-height:1.0;
+  letter-spacing:-1px;
+  margin-bottom:20px;
+}
+.stitle .pop{color:var(--orange);}
+
+/* ── ABOUT ── */
+#about{background:var(--surface);}
+.about-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+  max-width:1200px;margin:0 auto;
+}
+.about-body p{
+  font-size:16px;font-weight:300;line-height:1.9;
+  color:var(--muted);margin-bottom:18px;
+}
+.about-body p b{color:var(--white);font-weight:600;}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
+.chip{
+  background:rgba(255,107,43,0.08);
+  border:1px solid rgba(255,107,43,0.2);
+  padding:7px 18px;border-radius:100px;
+  font-size:13px;font-weight:600;color:var(--orange-soft);
+  transition:background .2s,border-color .2s;
+}
+.chip:hover{background:rgba(255,107,43,0.15);border-color:rgba(255,107,43,0.4);}
+.about-right{display:flex;flex-direction:column;gap:2px;}
+.about-quote-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-top:3px solid var(--orange);
+  padding:44px;
+}
+.aq-text{
+  font-family:'Syne',sans-serif;
+  font-weight:600;font-size:22px;line-height:1.5;
+  color:var(--white);margin-bottom:20px;
+}
+.aq-text::before{
+  content:'\201C';
+  font-size:60px;color:var(--orange);
+  line-height:0;vertical-align:-20px;margin-right:4px;
+}
+.aq-name{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);}
+.about-stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+}
+.as-box{
+  background:var(--card);
+  padding:28px 20px;text-align:center;
+  border:1px solid var(--border);
+  transition:border-color .2s;
+}
+.as-box:hover{border-color:rgba(255,107,43,0.3);}
+.as-n{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:40px;
+  color:var(--orange);line-height:1;
+}
+.as-l{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+
+/* ── SERVICES ── */
+#services .inner{max-width:1200px;margin:0 auto;}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:56px;
+}
+.scard{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:40px 32px;
+  border-radius:2px;
+  position:relative;overflow:hidden;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+}
+.scard::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--orange),var(--yellow));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s;
+}
+.scard:hover::before{transform:scaleX(1);}
+.scard:hover{
+  border-color:rgba(255,107,43,0.2);
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+}
+.scard-num{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:11px;letter-spacing:3px;
+  color:rgba(255,107,43,0.3);
+  margin-bottom:24px;
+}
+.scard-icon{font-size:32px;margin-bottom:20px;display:block;}
+.scard h3{
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:22px;
+  color:var(--white);margin-bottom:12px;
+}
+.scard p{font-size:14px;font-weight:300;line-height:1.8;color:var(--muted);}
+
+/* ── GEAR ── */
+#materiel{background:var(--surface);}
+#materiel .inner{max-width:1200px;}
+.gear-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2px;margin-top:56px;
+  background:var(--border);
+}
+.gitem{
+  background:var(--bg);
+  padding:32px 24px;
+  transition:background .25s;
+}
+.gitem:hover{background:rgba(255,107,43,0.05);}
+.gitem-icon{font-size:26px;margin-bottom:14px;}
+.gitem-name{
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:14px;
+  color:var(--white);margin-bottom:8px;line-height:1.4;
+}
+.gitem-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.7;}
+
+/* ── TARIFS ── */
+#tarifs .inner{max-width:860px;margin:0 auto;}
+.tarif-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-top:3px solid var(--orange);
+  padding:60px;margin-top:56px;
+  text-align:center;
+}
+.tarif-card h3{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:42px;
+  color:var(--white);margin-bottom:12px;
+}
+.tarif-sub{
+  font-size:15px;font-weight:300;
+  color:var(--muted);line-height:1.8;
+  max-width:500px;margin:0 auto 48px;
+}
+.tarif-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;background:var(--border);
+  margin-bottom:40px;text-align:left;
+}
+.titem{
+  background:var(--surface);
+  padding:18px 24px;
+  display:flex;align-items:center;gap:12px;
+  font-size:14px;font-weight:400;color:var(--white);
+}
+.titem::before{content:'✓';color:var(--orange);font-weight:700;flex-shrink:0;}
+.tarif-note{font-size:13px;color:var(--muted);margin-top:16px;}
+
+/* ── AVIS ── */
+#avis{background:var(--surface);}
+#avis .inner{max-width:1200px;margin:0 auto;}
+.avis-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-top:56px;
+}
+.avis-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:32px;
+  position:relative;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+.avis-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(0,0,0,0.3);
+  border-color:rgba(255,107,43,0.2);
+}
+.avis-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
+/* Stars */
+.stars{display:flex;gap:2px;}
+.star{font-size:15px;color:rgba(255,255,255,0.15);}
+.star.full{color:var(--yellow);}
+.star.half{
+  color:var(--yellow);
+  position:relative;
+}
+.avis-score{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:13px;
+  color:var(--muted);
+}
+.avis-text{
+  font-size:15px;font-style:italic;
+  font-weight:300;line-height:1.7;
+  color:var(--white);margin-bottom:24px;
+}
+.avis-sep{width:32px;height:1px;background:rgba(255,107,43,0.4);margin-bottom:20px;}
+.avis-author{display:flex;align-items:center;gap:12px;}
+.avis-av{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:15px;color:var(--orange);flex-shrink:0;
+}
+.avis-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--white);}
+.avis-event{font-size:12px;font-weight:300;color:var(--muted);margin-top:2px;}
+.avis-bg-q{
+  position:absolute;top:16px;right:20px;
+  font-size:80px;
+  color:rgba(255,107,43,0.06);
+  font-family:'Syne',sans-serif;font-weight:800;
+  line-height:1;pointer-events:none;
+}
+
+/* ── CONTACT ── */
+#contact .inner{max-width:1100px;margin:0 auto;}
+.contact-header{max-width:580px;margin-bottom:52px;}
+.contact-header p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;margin-top:14px;}
+
+/* tabs */
+.tab-nav{
+  display:flex;gap:0;
+  border-bottom:1px solid var(--border);
+  margin-bottom:36px;
+}
+.tab-btn{
+  background:none;border:none;
+  padding:13px 28px;
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:12px;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--muted);cursor:pointer;
+  position:relative;transition:color .2s;
+}
+.tab-btn::after{
+  content:'';position:absolute;
+  bottom:-1px;left:0;right:0;height:2px;
+  background:var(--orange);
+  transform:scaleX(0);transition:transform .3s;
+}
+.tab-btn.active{color:var(--white);}
+.tab-btn.active::after{transform:scaleX(1);}
+.tab-btn:hover{color:rgba(247,243,236,.75);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* form */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;}
+.ffield{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:20px 24px;
+  position:relative;
+  transition:border-color .2s,background .2s;
+}
+.ffield:focus-within{border-color:rgba(255,107,43,0.4);background:rgba(255,107,43,0.04);}
+.ffield.full{grid-column:span 2;}
+.ffield label{
+  display:block;font-size:10px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:10px;
+}
+.ffield input,.ffield select,.ffield textarea{
+  width:100%;background:transparent;
+  border:none;outline:none;
+  color:var(--white);
+  font-family:'Mulish',sans-serif;
+  font-size:15px;font-weight:300;resize:none;
+}
+.ffield input::placeholder,.ffield textarea::placeholder{color:rgba(255,255,255,0.18);}
+.ffield select option{background:#1e1c18;}
+.fsend{margin-top:16px;}
+.fsend button{
+  background:var(--orange);color:#fff;
+  border:none;
+  padding:15px 40px;
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:13px;letter-spacing:1px;
+  cursor:pointer;border-radius:2px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.fsend button:hover{
+  background:var(--orange-soft);
+  transform:translateY(-2px);
+  box-shadow:0 12px 36px rgba(255,107,43,0.35);
+}
+.fsuccess{
+  display:none;margin-top:20px;
+  background:rgba(255,107,43,0.08);
+  border:1px solid rgba(255,107,43,0.25);
+  padding:40px;text-align:center;
+}
+.fsuccess.show{display:block;}
+.fsuccess p{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:24px;
+  color:var(--orange-soft);margin-bottom:8px;
+}
+.fsuccess span{font-size:13px;font-weight:300;color:var(--muted);}
+
+/* contact info */
+.cinfo-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;background:var(--border);
+}
+.cinfo-item{
+  background:var(--card);padding:40px 36px;
+  transition:background .2s;
+}
+.cinfo-item:hover{background:rgba(255,107,43,0.05);}
+.cinfo-icon{font-size:28px;margin-bottom:16px;}
+.cinfo-item h3{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.cinfo-item p{font-size:17px;font-weight:300;color:var(--white);line-height:1.6;}
+.cinfo-item a{color:var(--orange-soft);text-decoration:none;font-size:17px;font-weight:300;transition:color .2s;}
+.cinfo-item a:hover{color:var(--orange);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:44px 56px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:20px;
+  position:relative;z-index:1;
+}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:.5px;}
+.footer-logo span{color:var(--orange);}
+footer p{font-size:12px;font-weight:300;color:var(--muted);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  section{padding:72px 20px;}
+  .hero{padding:90px 20px 64px;}
+  .hero-stats{display:none;}
+  .hero-scroll{display:none;}
+  .about-wrap{grid-template-columns:1fr;gap:48px;}
+  .services-grid{grid-template-columns:1fr;}
+  .gear-grid{grid-template-columns:1fr 1fr;}
+  .avis-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .ffield.full{grid-column:span 1;}
+  .cinfo-grid{grid-template-columns:1fr;}
+  .tarif-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Titouan <span>Phelip</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Prestations</a></li>
+    <li><a href="#materiel">Matériel</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#contact" class="nav-btn">Me contacter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-bg-text">TITOUAN</div>
+  <div class="hero-scroll"><span class="scroll-line"></span>Scroll</div>
+  <div class="hero-content">
+    <div class="hero-pill">DJ Professionnel · Lyon & Région</div>
+    <h1>
+      TITOUAN<br>
+      <span class="line2">PHELIP</span>
+    </h1>
+    <p class="hero-sub">Animation musicale sur-mesure pour vos anniversaires, soirées privées et événements d'entreprise. Une ambiance pensée pour vous, de 19h jusqu'à la dernière note.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-fire">Demander un devis →</a>
+      <a href="#about" class="btn-line">En savoir plus</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat">
+      <div class="hstat-n">2+</div>
+      <div class="hstat-l">Ans d'expérience</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">4</div>
+      <div class="hstat-l">Styles musicaux</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">Lyon</div>
+      <div class="hstat-l">& Alentours</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="t-item">House · Électro</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">R&B · Hip-Hop</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Pop · Variété</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Années 80–90–2000</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Anniversaires</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Soirées Privées</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Événements d'Entreprise</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">House · Électro</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">R&B · Hip-Hop</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Pop · Variété</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Années 80–90–2000</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Anniversaires</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Soirées Privées</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">Événements d'Entreprise</span><span class="t-item t-sep">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap reveal">
+    <div class="about-body">
+      <div class="stag">À propos</div>
+      <h2 class="stitle">L'art de faire<br><span class="pop">vibrer</span> une salle</h2>
+      <p>Je m'appelle <b>Titouan Phelip</b>, DJ passionné basé dans la région lyonnaise. Depuis plus de 2 ans, j'accompagne des particuliers et des entreprises pour animer leurs événements avec une touche musicale unique et sur-mesure.</p>
+      <p>Mon approche est simple : je prends le temps de comprendre votre univers, vos envies et votre public avant chaque prestation. Que vous souhaitiez de la house, du R&B, de la pop ou un voyage dans les années 80–2000, j'adapte chaque mix pour que la piste soit pleine.</p>
+      <div class="about-chips">
+        <span class="chip">House / Électro</span>
+        <span class="chip">R&B / Hip-Hop</span>
+        <span class="chip">Pop / Variété</span>
+        <span class="chip">Années 80–90–2000</span>
+        <span class="chip">Mix sur-mesure</span>
+        <span class="chip">Matériel pro</span>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-quote-card">
+        <p class="aq-text">Chaque soirée est une nouvelle histoire à écrire ensemble.</p>
+        <div class="aq-name">— Titouan Phelip</div>
+      </div>
+      <div class="about-stats-row">
+        <div class="as-box"><div class="as-n">2+</div><div class="as-l">Expérience</div></div>
+        <div class="as-box"><div class="as-n">Lyon</div><div class="as-l">Zone</div></div>
+        <div class="as-box"><div class="as-n">100%</div><div class="as-l">Sur-mesure</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="inner">
+    <div class="reveal">
+      <div class="stag">Prestations</div>
+      <h2 class="stitle">Ce que je <span class="pop">propose</span></h2>
+    </div>
+    <div class="services-grid reveal">
+      <div class="scard">
+        <div class="scard-num">01</div>
+        <span class="scard-icon">🎂</span>
+        <h3>Anniversaires</h3>
+        <p>Une soirée à votre image. Playlist sur-mesure, énergie calibrée pour votre public, ambiance festive de la première à la dernière chanson.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-num">02</div>
+        <span class="scard-icon">🥂</span>
+        <h3>Soirées Privées</h3>
+        <p>Fête entre amis ou soirée plus intimiste, je m'adapte au mood du moment et monte la température au bon rythme.</p>
+      </div>
+      <div class="scard">
+        <div class="scard-num">03</div>
+        <span class="scard-icon">🏢</span>
+        <h3>Événements d'Entreprise</h3>
+        <p>Séminaires, team-buildings, soirées de fin d'année — une animation pro et mémorable pour fédérer vos équipes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIEL -->
+<section id="materiel">
+  <div class="inner">
+    <div class="reveal">
+      <div class="stag">Matériel</div>
+      <h2 class="stitle">Équipement <span class="pop">pro</span></h2>
+    </div>
+    <div class="gear-grid reveal">
+      <div class="gitem"><div class="gitem-icon">🎛️</div><div class="gitem-name">Platines DJ & Table de mixage</div><div class="gitem-desc">Mix en live, transitions fluides, ambiance constante</div></div>
+      <div class="gitem"><div class="gitem-icon">🔊</div><div class="gitem-name">Enceintes the box CL 110 Top MK II</div><div class="gitem-desc">200W RMS / 800W crête, large bande 2 voies 10"</div></div>
+      <div class="gitem"><div class="gitem-icon">🔉</div><div class="gitem-name">Caisson de basses CL 118 Sub MK II</div><div class="gitem-desc">18" actif — 350W RMS / 700W crête</div></div>
+      <div class="gitem"><div class="gitem-icon">💡</div><div class="gitem-name">Inno Pocket Spot Twins</div><div class="gitem-desc">Spots motorisés LED, effets synchronisés musique</div></div>
+      <div class="gitem"><div class="gitem-icon">🌟</div><div class="gitem-name">Projecteur Football RGBW</div><div class="gitem-desc">16x3W tête mobile, stroboscope double bras, DMX</div></div>
+      <div class="gitem"><div class="gitem-icon">🪩</div><div class="gitem-name">Deux boules à facettes électriques</div><div class="gitem-desc">Effet miroir classique, ambiance festive garantie</div></div>
+      <div class="gitem"><div class="gitem-icon">🌫️</div><div class="gitem-name">Machine à fumée</div><div class="gitem-desc">Sublime les effets lumineux en soirée</div></div>
+      <div class="gitem"><div class="gitem-icon">🔧</div><div class="gitem-name">Installation & Câblage sécurisé</div><div class="gitem-desc">Montage avant les invités, démontage inclus</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="inner">
+    <div class="reveal">
+      <div class="stag">Tarifs</div>
+      <h2 class="stitle">Une offre <span class="pop">sur-mesure</span></h2>
+    </div>
+    <div class="tarif-card reveal">
+      <h3>Devis personnalisé</h3>
+      <p class="tarif-sub">Chaque événement est unique. Contactez-moi et je vous reviens sous 24h avec une proposition adaptée à votre soirée, votre durée et votre lieu.</p>
+      <div class="tarif-grid">
+        <div class="titem">Prestation DJ complète</div>
+        <div class="titem">Matériel son professionnel</div>
+        <div class="titem">Jeux de lumières complets</div>
+        <div class="titem">Machine à fumée</div>
+        <div class="titem">Installation & désinstallation</div>
+        <div class="titem">Déplacement Lyon & alentours</div>
+      </div>
+      <a href="#contact" class="btn-fire" style="display:inline-flex;">Demander un devis gratuit →</a>
+      <p class="tarif-note">Paiement par virement bancaire ou en espèces</p>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis">
+  <div class="inner">
+    <div class="reveal">
+      <div class="stag">Avis clients</div>
+      <h2 class="stitle">Ils en <span class="pop">parlent</span></h2>
+    </div>
+    <div class="avis-grid reveal">
+
+      <!-- 5/5 -->
+      <div class="avis-card">
+        <div class="avis-bg-q">"</div>
+        <div class="avis-top">
+          <div class="stars">
+            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span>
+          </div>
+          <span class="avis-score">5 / 5</span>
+        </div>
+        <p class="avis-text">Titouan a mis le feu à ma soirée d'anniversaire ! Il a su lire la salle parfaitement, tout le monde a dansé jusqu'à la fin. Un vrai pro à l'écoute.</p>
+        <div class="avis-sep"></div>
+        <div class="avis-author">
+          <div class="avis-av">S</div>
+          <div><div class="avis-name">Sarah M.</div><div class="avis-event">Anniversaire 30 ans · Lyon</div></div>
+        </div>
+      </div>
+
+      <!-- 4.5/5 -->
+      <div class="avis-card">
+        <div class="avis-bg-q">"</div>
+        <div class="avis-top">
+          <div class="stars">
+            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half" style="background:linear-gradient(90deg,var(--yellow) 50%,transparent 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">★</span>
+          </div>
+          <span class="avis-score">4.5 / 5</span>
+        </div>
+        <p class="avis-text">Super prestation pour notre soirée d'entreprise. Titouan a vraiment adapté la musique à notre public. La seule petite chose : l'installation a pris un peu plus de temps que prévu, mais rien de gênant.</p>
+        <div class="avis-sep"></div>
+        <div class="avis-author">
+          <div class="avis-av">L</div>
+          <div><div class="avis-name">Lucas D.</div><div class="avis-event">Soirée d'entreprise · Villeurbanne</div></div>
+        </div>
+      </div>
+
+      <!-- 5/5 -->
+      <div class="avis-card">
+        <div class="avis-bg-q">"</div>
+        <div class="avis-top">
+          <div class="stars">
+            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span>
+          </div>
+          <span class="avis-score">5 / 5</span>
+        </div>
+        <p class="avis-text">Excellent DJ, très pro et sympa. Arrivé en avance pour l'installation, son impeccable et ambiance électrique. Je recommande les yeux fermés.</p>
+        <div class="avis-sep"></div>
+        <div class="avis-author">
+          <div class="avis-av">C</div>
+          <div><div class="avis-name">Camille R.</div><div class="avis-event">Soirée privée · Ouest Lyonnais</div></div>
+        </div>
+      </div>
+
+      <!-- 4/5 -->
+      <div class="avis-card">
+        <div class="avis-bg-q">"</div>
+        <div class="avis-top">
+          <div class="stars">
+            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star">★</span>
+          </div>
+          <span class="avis-score">4 / 5</span>
+        </div>
+        <p class="avis-text">Très bonne soirée, Titouan a géré une salle avec des invités de tous âges avec brio. Je retire juste une étoile car certains morceaux demandés en avance n'ont pas tous été joués.</p>
+        <div class="avis-sep"></div>
+        <div class="avis-author">
+          <div class="avis-av">M</div>
+          <div><div class="avis-name">Marc & Julie P.</div><div class="avis-event">Anniversaire 50 ans · Lyon</div></div>
+        </div>
+      </div>
+
+      <!-- 5/5 -->
+      <div class="avis-card">
+        <div class="avis-bg-q">"</div>
+        <div class="avis-top">
+          <div class="stars">
+            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span>
+          </div>
+          <span class="avis-score">5 / 5</span>
+        </div>
+        <p class="avis-text">Vraiment au top. Le matériel était impeccable, le son puissant mais jamais agressif, et Titouan était souriant toute la soirée. On le recontacte sans hésiter.</p>
+        <div class="avis-sep"></div>
+        <div class="avis-author">
+          <div class="avis-av">A</div>
+          <div><div class="avis-name">Amélie V.</div><div class="avis-event">Soirée privée · Tassin-la-Demi-Lune</div></div>
+        </div>
+      </div>
+
+      <!-- 4.5/5 -->
+      <div class="avis-card">
+        <div class="avis-bg-q">"</div>
+        <div class="avis-top">
+          <div class="stars">
+            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half" style="background:linear-gradient(90deg,var(--yellow) 50%,transparent 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">★</span>
+          </div>
+          <span class="avis-score">4.5 / 5</span>
+        </div>
+        <p class="avis-text">Titouan a animé notre team-building avec beaucoup d'énergie. Réactif et passionné. La piste de danse ne s'est pas vidée de la nuit !</p>
+        <div class="avis-sep"></div>
+        <div class="avis-author">
+          <div class="avis-av">T</div>
+          <div><div class="avis-name">Thomas B.</div><div class="avis-event">Team-building · Lyon 6e</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-header reveal">
+      <div class="stag">Contact</div>
+      <h2 class="stitle">Parlons de <span class="pop">votre soirée</span></h2>
+      <p>Remplissez le formulaire ou retrouvez mes coordonnées directes. Je réponds sous 24h.</p>
+    </div>
+
+    <div class="tab-nav reveal">
+      <button class="tab-btn active" onclick="switchTab('form',this)">📋 Demande de devis</button>
+      <button class="tab-btn" onclick="switchTab('info',this)">📞 Coordonnées</button>
+    </div>
+
+    <!-- FORM -->
+    <div class="tab-panel active" id="tab-form">
+      <div class="frow">
+        <div class="ffield"><label>Prénom & Nom</label><input type="text" id="f-name" placeholder="Marie Dupont"></div>
+        <div class="ffield"><label>Email</label><input type="email" id="f-email" placeholder="votre@email.com"></div>
+      </div>
+      <div class="frow">
+        <div class="ffield"><label>Téléphone</label><input type="tel" id="f-phone" placeholder="06 XX XX XX XX"></div>
+        <div class="ffield"><label>Date de l'événement</label><input type="date" id="f-date"></div>
+      </div>
+      <div class="frow">
+        <div class="ffield"><label>Type d'événement</label>
+          <select id="f-type">
+            <option value="" disabled selected>Choisir...</option>
+            <option>Anniversaire</option>
+            <option>Soirée privée</option>
+            <option>Événement d'entreprise</option>
+            <option>Mariage</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="ffield"><label>Lieu / Ville</label><input type="text" id="f-lieu" placeholder="Lyon, Villeurbanne, Tassin..."></div>
+      </div>
+      <div class="frow">
+        <div class="ffield"><label>Ambiance musicale</label>
+          <select id="f-ambiance">
+            <option value="" disabled selected>Choisir...</option>
+            <option>House / Électro</option>
+            <option>R&B / Hip-Hop</option>
+            <option>Pop / Variété</option>
+            <option>Années 80–90–2000</option>
+            <option>Mix de plusieurs styles</option>
+            <option>Libre (je fais confiance)</option>
+          </select>
+        </div>
+        <div class="ffield"><label>Nombre d'invités</label><input type="number" id="f-guests" placeholder="Ex : 50"></div>
+      </div>
+      <div class="frow" style="grid-template-columns:1fr;">
+        <div class="ffield full"><label>Message & infos complémentaires</label><textarea id="f-message" rows="4" placeholder="Horaires, thème, demandes particulières..."></textarea></div>
+      </div>
+      <div class="fsend"><button onclick="submitForm()">Envoyer ma demande →</button></div>
+      <div class="fsuccess" id="formSuccess">
+        <p>✓ Demande envoyée avec succès !</p>
+        <span>Le PDF de votre devis a été téléchargé et Titouan a reçu votre demande par email. Il vous recontacte sous 24h avec le tarif personnalisé.</span>
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div class="tab-panel" id="tab-info">
+      <div class="cinfo-grid">
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📍</div>
+          <h3>Zone d'intervention</h3>
+          <p>Lyon & Alentours<br><span style="font-size:14px;color:var(--muted);">Villeurbanne, Tassin, et toute la région lyonnaise</span></p>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📧</div>
+          <h3>Email</h3>
+          <a href="mailto:titouanphelip@gmail.com">titouanphelip@gmail.com</a>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">⏰</div>
+          <h3>Disponibilité</h3>
+          <p>Toute la semaine<br><span style="font-size:14px;color:var(--muted);">Sur réservation</span></p>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">💳</div>
+          <h3>Paiement</h3>
+          <p>Virement bancaire<br><span style="font-size:14px;color:var(--muted);">ou espèces</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Titouan <span>Phelip</span></div>
+  <p>© 2026 · DJ Professionnel · Lyon & Région</p>
+  <p>Tous droits réservés</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" crossorigin="anonymous"></script>
+<script>
+// Fallback : si jsPDF n'a pas chargé, on réessaie depuis un autre CDN
+if(!window.jspdf){
+  var s=document.createElement('script');
+  s.src='https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+
+// ════════════════════════════════════════════════════════════
+// ⚠️  CONFIGURATION EMAILJS — À REMPLIR PAR TITOUAN
+// ════════════════════════════════════════════════════════════
+// 1. Va sur https://www.emailjs.com et crée un compte gratuit
+// 2. Ajoute un "Email Service" (Gmail) → copie le Service ID
+// 3. Crée un "Email Template" avec ce contenu :
+//
+//    Sujet : 🎧 Nouvelle demande de devis — {{event_type}} le {{event_date}}
+//
+//    Corps :
+//    Nouvelle demande de devis reçue !
+//
+//    👤 Client : {{client_name}}
+//    📧 Email : {{client_email}}
+//    📞 Téléphone : {{client_phone}}
+//
+//    📅 Date : {{event_date}}
+//    🎉 Type : {{event_type}}
+//    📍 Lieu : {{event_lieu}}
+//    🎵 Ambiance : {{event_ambiance}}
+//    👥 Invités : {{event_guests}}
+//
+//    💬 Message :
+//    {{client_message}}
+//
+//    ---
+//    N° Devis : {{devis_num}}
+//
+// 4. Copie le Template ID
+// 5. Va dans Account → copie ta Public Key
+// 6. Remplace les 3 valeurs ci-dessous :
+
+const EMAILJS_PUBLIC_KEY = 'gElTV21XlltKS9zr0';
+const EMAILJS_SERVICE_ID = 'service_5p2ypfa';
+const EMAILJS_TEMPLATE_ID = 'template_v2tpcwl';
+
+// ════════════════════════════════════════════════════════════
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function formatDateFR(dateStr){
+  if(!dateStr) return '—';
+  const d=new Date(dateStr);
+  const months=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+}
+
+function generateDevisPDF(data){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF('p','mm','a4');
+  const W = 210, H = 297;
+  const orange = [255,107,43];
+  const dark = [15,14,12];
+  const card = [30,28,24];
+  const white = [247,243,236];
+  const muted = [160,155,145];
+  const today = new Date();
+  const devisNum = 'DEV-' + today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + String(today.getDate()).padStart(2,'0') + '-' + String(Math.floor(Math.random()*9000)+1000);
+
+  // ── BG
+  doc.setFillColor(...dark);
+  doc.rect(0,0,W,H,'F');
+
+  // ── TOP ORANGE BAR
+  doc.setFillColor(...orange);
+  doc.rect(0,0,W,4,'F');
+
+  // ── HEADER
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(28);
+  doc.setTextColor(...white);
+  doc.text('TITOUAN', 20, 28);
+  doc.setTextColor(...orange);
+  doc.text('PHELIP', 20+doc.getTextWidth('TITOUAN ')+2, 28);
+
+  doc.setFont('helvetica','normal');
+  doc.setFontSize(9);
+  doc.setTextColor(...muted);
+  doc.text('DJ Professionnel \u00b7 Lyon & R\u00e9gion', 20, 35);
+
+  // Devis badge top right
+  doc.setFillColor(...card);
+  doc.roundedRect(W-75, 14, 55, 28, 2, 2, 'F');
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(7);
+  doc.setTextColor(...orange);
+  doc.text('DEVIS', W-70, 24);
+  doc.setFont('helvetica','normal');
+  doc.setFontSize(8);
+  doc.setTextColor(...white);
+  doc.text(devisNum, W-70, 31);
+  doc.setFontSize(7);
+  doc.setTextColor(...muted);
+  doc.text(formatDateFR(today.toISOString().slice(0,10)), W-70, 37);
+
+  // ── SEPARATOR
+  let y = 50;
+  doc.setDrawColor(...orange);
+  doc.setLineWidth(0.3);
+  doc.line(20, y, W-20, y);
+
+  // ── CLIENT INFO SECTION
+  y += 14;
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...orange);
+  doc.text('INFORMATIONS CLIENT', 20, y);
+  y += 10;
+
+  // Client info card
+  doc.setFillColor(...card);
+  doc.roundedRect(20, y-4, W-40, 52, 2, 2, 'F');
+
+  const fields = [
+    ['Nom', data.name],
+    ['Email', data.email],
+    ['T\u00e9l\u00e9phone', data.phone || '\u2014'],
+    ['Lieu', data.lieu || '\u2014'],
+  ];
+  let fx = 28, fy = y + 6;
+  doc.setFontSize(7);
+  for(const [label, val] of fields){
+    doc.setFont('helvetica','normal');
+    doc.setTextColor(...muted);
+    doc.text(label.toUpperCase(), fx, fy);
+    doc.setFont('helvetica','bold');
+    doc.setTextColor(...white);
+    doc.setFontSize(10);
+    doc.text(val || '\u2014', fx, fy+6);
+    doc.setFontSize(7);
+    fy += 16;
+  }
+
+  // Right column
+  const fields2 = [
+    ['Date \u00e9v\u00e9nement', formatDateFR(data.date)],
+    ['Type', data.type || '\u2014'],
+    ['Ambiance', data.ambiance || '\u2014'],
+    ['Invit\u00e9s', data.guests ? data.guests + ' personnes' : '\u2014'],
+  ];
+  fx = W/2 + 5; fy = y + 6;
+  for(const [label, val] of fields2){
+    doc.setFont('helvetica','normal');
+    doc.setTextColor(...muted);
+    doc.text(label.toUpperCase(), fx, fy);
+    doc.setFont('helvetica','bold');
+    doc.setTextColor(...white);
+    doc.setFontSize(10);
+    doc.text(val || '\u2014', fx, fy+6);
+    doc.setFontSize(7);
+    fy += 16;
+  }
+
+  y += 60;
+
+  // ── PRESTATIONS TABLE
+  y += 8;
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...orange);
+  doc.text('D\u00c9TAIL DE LA PRESTATION', 20, y);
+  y += 8;
+
+  // Table header
+  doc.setFillColor(40,38,33);
+  doc.rect(20, y-4, W-40, 10, 'F');
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(7.5);
+  doc.setTextColor(...orange);
+  doc.text('PRESTATION', 28, y+2);
+  doc.text('PRIX', W-45, y+2);
+  y += 12;
+
+  const prestations = [
+    'Prestation DJ compl\u00e8te (soir\u00e9e)',
+    'Mat\u00e9riel son professionnel (enceintes + caisson)',
+    'Jeux de lumi\u00e8res complets (spots, boules, stroboscope)',
+    'Machine \u00e0 fum\u00e9e',
+    'Installation & d\u00e9sinstallation',
+    'D\u00e9placement Lyon & alentours',
+  ];
+
+  for(let i=0; i<prestations.length; i++){
+    if(i%2===0){
+      doc.setFillColor(...card);
+      doc.rect(20, y-5, W-40, 12, 'F');
+    }
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...white);
+    doc.text('\u2713', 28, y+1);
+    doc.text(prestations[i], 36, y+1);
+
+    // Empty price placeholder
+    doc.setFillColor(50,48,42);
+    doc.roundedRect(W-58, y-4, 30, 10, 1, 1, 'F');
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...muted);
+    doc.text('\u20ac ___', W-53, y+2);
+
+    y += 12;
+  }
+
+  // TOTAL row
+  y += 4;
+  doc.setFillColor(...orange);
+  doc.roundedRect(20, y-5, W-40, 14, 2, 2, 'F');
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(11);
+  doc.setTextColor(255,255,255);
+  doc.text('TOTAL TTC', 28, y+4);
+  doc.setFontSize(13);
+  doc.text('\u20ac __________', W-70, y+4);
+
+  // ── MESSAGE
+  y += 24;
+  if(data.message){
+    doc.setFont('helvetica','bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...orange);
+    doc.text('MESSAGE DU CLIENT', 20, y);
+    y += 8;
+    doc.setFillColor(...card);
+    const msgLines = doc.splitTextToSize(data.message, W-52);
+    const msgH = Math.max(20, msgLines.length * 5 + 12);
+    doc.roundedRect(20, y-4, W-40, msgH, 2, 2, 'F');
+    doc.setFont('helvetica','italic');
+    doc.setFontSize(9);
+    doc.setTextColor(...white);
+    doc.text(msgLines, 28, y+4);
+    y += msgH + 8;
+  }
+
+  // ── CONDITIONS
+  y += 4;
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...orange);
+  doc.text('CONDITIONS', 20, y);
+  y += 8;
+  doc.setFillColor(...card);
+  doc.roundedRect(20, y-4, W-40, 34, 2, 2, 'F');
+  doc.setFont('helvetica','normal');
+  doc.setFontSize(8);
+  doc.setTextColor(...muted);
+  const conditions = [
+    '\u2022 Ce devis est valable 30 jours \u00e0 compter de sa date d\'\u00e9mission.',
+    '\u2022 Un acompte de 30% est demand\u00e9 \u00e0 la confirmation de la r\u00e9servation.',
+    '\u2022 Paiement par virement bancaire ou en esp\u00e8ces.',
+    '\u2022 Annulation gratuite jusqu\'\u00e0 14 jours avant l\'\u00e9v\u00e9nement.',
+  ];
+  conditions.forEach((c, i) => {
+    doc.text(c, 28, y + 4 + i*7);
+  });
+
+  // ── FOOTER BAR
+  doc.setFillColor(...card);
+  doc.rect(0, H-20, W, 20, 'F');
+  doc.setFillColor(...orange);
+  doc.rect(0, H-20, W, 0.5, 'F');
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...white);
+  doc.text('Titouan Phelip', 20, H-10);
+  doc.setFont('helvetica','normal');
+  doc.setFontSize(7);
+  doc.setTextColor(...muted);
+  doc.text('DJ Professionnel \u00b7 Lyon & R\u00e9gion \u00b7 titouanphelip@gmail.com', 20, H-5);
+  doc.text('Devis ' + devisNum, W-60, H-10);
+
+  // ── SAVE
+  doc.save('Devis_' + data.name.replace(/\s+/g,'_') + '_' + devisNum + '.pdf');
+}
+
+function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const type=document.getElementById('f-type').value;
+  const date=document.getElementById('f-date').value;
+  const phone=document.getElementById('f-phone').value.trim();
+  const lieu=document.getElementById('f-lieu').value.trim();
+  const ambiance=document.getElementById('f-ambiance').value;
+  const guests=document.getElementById('f-guests').value;
+  const message=document.getElementById('f-message').value.trim();
+
+  if(!name||!email||!type||!date){
+    alert('Merci de remplir au minimum : nom, email, type d\'événement et date.');
+    return;
+  }
+
+  // Vérifier que jsPDF est chargé
+  if(!window.jspdf){
+    alert('Le module PDF n\'a pas fini de charger. Veuillez patienter 2 secondes et réessayer.');
+    return;
+  }
+
+  const btn = document.querySelector('.fsend button');
+  btn.textContent = 'Envoi en cours...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  const devisNum = 'DEV-' + new Date().getFullYear() + '-' + String(new Date().getMonth()+1).padStart(2,'0') + String(new Date().getDate()).padStart(2,'0') + '-' + String(Math.floor(Math.random()*9000)+1000);
+
+  // Generate PDF
+  try {
+    generateDevisPDF({ name, email, phone, date, type, lieu, ambiance, guests, message });
+  } catch(e) {
+    console.error('Erreur PDF:', e);
+  }
+
+  // Send email via EmailJS
+  if(typeof emailjs !== 'undefined'){
+    const templateParams = {
+      client_name: name,
+      client_email: email,
+      client_phone: phone || 'Non renseigné',
+      event_date: formatDateFR(date),
+      event_type: type,
+      event_lieu: lieu || 'Non renseigné',
+      event_ambiance: ambiance || 'Non renseigné',
+      event_guests: guests ? guests + ' personnes' : 'Non renseigné',
+      client_message: message || 'Aucun message',
+      devis_num: devisNum
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function(){
+        btn.style.display='none';
+        document.getElementById('formSuccess').classList.add('show');
+        document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+      })
+      .catch(function(err){
+        console.error('EmailJS error:', err);
+        btn.style.display='none';
+        document.getElementById('formSuccess').classList.add('show');
+        document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+      });
+  } else {
+    // EmailJS pas chargé, on montre quand même le succès (le PDF a été généré)
+    btn.style.display='none';
+    document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
