@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titouan Phelip — DJ</title>
+<title>Titouan Phelip ‚Äî DJ</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Mulish:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -28,7 +28,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ── NOISE OVERLAY ── */
+/* ‚îÄ‚îÄ NOISE OVERLAY ‚îÄ‚îÄ */
 body::before{
   content:'';
   position:fixed;inset:0;
@@ -36,7 +36,7 @@ body::before{
   pointer-events:none;z-index:0;opacity:0.6;
 }
 
-/* ── NAV ── */
+/* ‚îÄ‚îÄ NAV ‚îÄ‚îÄ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -76,7 +76,7 @@ nav{
 }
 .nav-btn:hover{background:var(--orange-soft);transform:translateY(-1px);}
 
-/* ── HERO ── */
+/* ‚îÄ‚îÄ HERO ‚îÄ‚îÄ */
 .hero{
   min-height:100vh;
   display:flex;flex-direction:column;justify-content:flex-end;
@@ -177,7 +177,7 @@ nav{
   transition:color .2s;
 }
 .btn-line:hover{color:var(--white);}
-.btn-line::after{content:'→';transition:transform .2s;}
+.btn-line::after{content:'‚Üí';transition:transform .2s;}
 .btn-line:hover::after{transform:translateX(4px);}
 
 /* hero corner stats */
@@ -213,7 +213,7 @@ nav{
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
-/* ── TICKER ── */
+/* ‚îÄ‚îÄ TICKER ‚îÄ‚îÄ */
 .ticker{
   background:var(--orange);
   padding:13px 0;overflow:hidden;white-space:nowrap;
@@ -230,7 +230,7 @@ nav{
 .t-sep{color:rgba(255,255,255,0.4);padding:0 4px;}
 @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ── SECTIONS ── */
+/* ‚îÄ‚îÄ SECTIONS ‚îÄ‚îÄ */
 section{padding:100px 56px;position:relative;z-index:1;}
 .stag{
   display:inline-flex;align-items:center;gap:8px;
@@ -248,7 +248,7 @@ section{padding:100px 56px;position:relative;z-index:1;}
 }
 .stitle .pop{color:var(--orange);}
 
-/* ── ABOUT ── */
+/* ‚îÄ‚îÄ ABOUT ‚îÄ‚îÄ */
 #about{background:var(--surface);}
 .about-wrap{
   display:grid;grid-template-columns:1fr 1fr;
@@ -304,7 +304,7 @@ section{padding:100px 56px;position:relative;z-index:1;}
 }
 .as-l{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
 
-/* ── SERVICES ── */
+/* ‚îÄ‚îÄ SERVICES ‚îÄ‚îÄ */
 #services .inner{max-width:1200px;margin:0 auto;}
 .services-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -345,7 +345,7 @@ section{padding:100px 56px;position:relative;z-index:1;}
 }
 .scard p{font-size:14px;font-weight:300;line-height:1.8;color:var(--muted);}
 
-/* ── GEAR ── */
+/* ‚îÄ‚îÄ GEAR ‚îÄ‚îÄ */
 #materiel{background:var(--surface);}
 #materiel .inner{max-width:1200px;}
 .gear-grid{
@@ -367,7 +367,7 @@ section{padding:100px 56px;position:relative;z-index:1;}
 }
 .gitem-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.7;}
 
-/* ── TARIFS ── */
+/* ‚îÄ‚îÄ TARIFS ‚îÄ‚îÄ */
 #tarifs .inner{max-width:860px;margin:0 auto;}
 .tarif-card{
   background:var(--card);
@@ -397,10 +397,10 @@ section{padding:100px 56px;position:relative;z-index:1;}
   display:flex;align-items:center;gap:12px;
   font-size:14px;font-weight:400;color:var(--white);
 }
-.titem::before{content:'✓';color:var(--orange);font-weight:700;flex-shrink:0;}
+.titem::before{content:'‚úì';color:var(--orange);font-weight:700;flex-shrink:0;}
 .tarif-note{font-size:13px;color:var(--muted);margin-top:16px;}
 
-/* ── AVIS ── */
+/* ‚îÄ‚îÄ AVIS ‚îÄ‚îÄ */
 #avis{background:var(--surface);}
 #avis .inner{max-width:1200px;margin:0 auto;}
 .avis-grid{
@@ -457,7 +457,7 @@ section{padding:100px 56px;position:relative;z-index:1;}
   line-height:1;pointer-events:none;
 }
 
-/* ── CONTACT ── */
+/* ‚îÄ‚îÄ CONTACT ‚îÄ‚îÄ */
 #contact .inner{max-width:1100px;margin:0 auto;}
 .contact-header{max-width:580px;margin-bottom:52px;}
 .contact-header p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;margin-top:14px;}
@@ -558,7 +558,7 @@ section{padding:100px 56px;position:relative;z-index:1;}
 .cinfo-item a{color:var(--orange-soft);text-decoration:none;font-size:17px;font-weight:300;transition:color .2s;}
 .cinfo-item a:hover{color:var(--orange);}
 
-/* ── FOOTER ── */
+/* ‚îÄ‚îÄ FOOTER ‚îÄ‚îÄ */
 footer{
   background:var(--surface);
   border-top:1px solid var(--border);
@@ -571,11 +571,11 @@ footer{
 .footer-logo span{color:var(--orange);}
 footer p{font-size:12px;font-weight:300;color:var(--muted);}
 
-/* ── REVEAL ── */
+/* ‚îÄ‚îÄ REVEAL ‚îÄ‚îÄ */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
-/* ── RESPONSIVE ── */
+/* ‚îÄ‚îÄ RESPONSIVE ‚îÄ‚îÄ */
 @media(max-width:960px){
   nav{padding:0 20px;}
   .nav-links{display:none;}
@@ -601,9 +601,9 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
 <nav>
   <a class="nav-logo" href="#">Titouan <span>Phelip</span></a>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
+    <li><a href="#about">√Ä propos</a></li>
     <li><a href="#services">Prestations</a></li>
-    <li><a href="#materiel">Matériel</a></li>
+    <li><a href="#materiel">Mat√©riel</a></li>
     <li><a href="#tarifs">Tarifs</a></li>
     <li><a href="#avis">Avis</a></li>
     <li><a href="#contact" class="nav-btn">Me contacter</a></li>
@@ -617,21 +617,21 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
   <div class="hero-bg-text">TITOUAN</div>
   <div class="hero-scroll"><span class="scroll-line"></span>Scroll</div>
   <div class="hero-content">
-    <div class="hero-pill">DJ Professionnel · Lyon & Région</div>
+    <div class="hero-pill">DJ Professionnel ¬∑ Lyon & R√©gion</div>
     <h1>
       TITOUAN<br>
       <span class="line2">PHELIP</span>
     </h1>
-    <p class="hero-sub">Animation musicale sur-mesure pour vos anniversaires, soirées privées et événements d'entreprise. Une ambiance pensée pour vous, de 19h jusqu'à la dernière note.</p>
+    <p class="hero-sub">Animation musicale sur-mesure pour vos anniversaires, soir√©es priv√©es et √©v√©nements d'entreprise. Une ambiance pens√©e pour vous, de 19h jusqu'√† la derni√®re note.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-fire">Demander un devis →</a>
+      <a href="#contact" class="btn-fire">Demander un devis ‚Üí</a>
       <a href="#about" class="btn-line">En savoir plus</a>
     </div>
   </div>
   <div class="hero-stats">
     <div class="hstat">
       <div class="hstat-n">2+</div>
-      <div class="hstat-l">Ans d'expérience</div>
+      <div class="hstat-l">Ans d'exp√©rience</div>
     </div>
     <div class="hstat">
       <div class="hstat-n">4</div>
@@ -647,20 +647,20 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="t-item">House · Électro</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">R&B · Hip-Hop</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Pop · Variété</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Années 80–90–2000</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Anniversaires</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Soirées Privées</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Événements d'Entreprise</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">House · Électro</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">R&B · Hip-Hop</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Pop · Variété</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Années 80–90–2000</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Anniversaires</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Soirées Privées</span><span class="t-item t-sep">✦</span>
-    <span class="t-item">Événements d'Entreprise</span><span class="t-item t-sep">✦</span>
+    <span class="t-item">House ¬∑ √âlectro</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">R&B ¬∑ Hip-Hop</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Pop ¬∑ Vari√©t√©</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Ann√©es 80‚Äì90‚Äì2000</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Anniversaires</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Soir√©es Priv√©es</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">√âv√©nements d'Entreprise</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">House ¬∑ √âlectro</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">R&B ¬∑ Hip-Hop</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Pop ¬∑ Vari√©t√©</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Ann√©es 80‚Äì90‚Äì2000</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Anniversaires</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">Soir√©es Priv√©es</span><span class="t-item t-sep">‚ú¶</span>
+    <span class="t-item">√âv√©nements d'Entreprise</span><span class="t-item t-sep">‚ú¶</span>
   </div>
 </div>
 
@@ -668,26 +668,26 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
 <section id="about">
   <div class="about-wrap reveal">
     <div class="about-body">
-      <div class="stag">À propos</div>
+      <div class="stag">√Ä propos</div>
       <h2 class="stitle">L'art de faire<br><span class="pop">vibrer</span> une salle</h2>
-      <p>Je m'appelle <b>Titouan Phelip</b>, DJ passionné basé dans la région lyonnaise. Depuis plus de 2 ans, j'accompagne des particuliers et des entreprises pour animer leurs événements avec une touche musicale unique et sur-mesure.</p>
-      <p>Mon approche est simple : je prends le temps de comprendre votre univers, vos envies et votre public avant chaque prestation. Que vous souhaitiez de la house, du R&B, de la pop ou un voyage dans les années 80–2000, j'adapte chaque mix pour que la piste soit pleine.</p>
+      <p>Je m'appelle <b>Titouan Phelip</b>, DJ passionn√© bas√© dans la r√©gion lyonnaise. Depuis plus de 2 ans, j'accompagne des particuliers et des entreprises pour animer leurs √©v√©nements avec une touche musicale unique et sur-mesure.</p>
+      <p>Mon approche est simple : je prends le temps de comprendre votre univers, vos envies et votre public avant chaque prestation. Que vous souhaitiez de la house, du R&B, de la pop ou un voyage dans les ann√©es 80‚Äì2000, j'adapte chaque mix pour que la piste soit pleine.</p>
       <div class="about-chips">
-        <span class="chip">House / Électro</span>
+        <span class="chip">House / √âlectro</span>
         <span class="chip">R&B / Hip-Hop</span>
-        <span class="chip">Pop / Variété</span>
-        <span class="chip">Années 80–90–2000</span>
+        <span class="chip">Pop / Vari√©t√©</span>
+        <span class="chip">Ann√©es 80‚Äì90‚Äì2000</span>
         <span class="chip">Mix sur-mesure</span>
-        <span class="chip">Matériel pro</span>
+        <span class="chip">Mat√©riel pro</span>
       </div>
     </div>
     <div class="about-right">
       <div class="about-quote-card">
-        <p class="aq-text">Chaque soirée est une nouvelle histoire à écrire ensemble.</p>
-        <div class="aq-name">— Titouan Phelip</div>
+        <p class="aq-text">Chaque soir√©e est une nouvelle histoire √† √©crire ensemble.</p>
+        <div class="aq-name">‚Äî Titouan Phelip</div>
       </div>
       <div class="about-stats-row">
-        <div class="as-box"><div class="as-n">2+</div><div class="as-l">Expérience</div></div>
+        <div class="as-box"><div class="as-n">2+</div><div class="as-l">Exp√©rience</div></div>
         <div class="as-box"><div class="as-n">Lyon</div><div class="as-l">Zone</div></div>
         <div class="as-box"><div class="as-n">100%</div><div class="as-l">Sur-mesure</div></div>
       </div>
@@ -705,21 +705,21 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
     <div class="services-grid reveal">
       <div class="scard">
         <div class="scard-num">01</div>
-        <span class="scard-icon">🎂</span>
+        <span class="scard-icon">üéÇ</span>
         <h3>Anniversaires</h3>
-        <p>Une soirée à votre image. Playlist sur-mesure, énergie calibrée pour votre public, ambiance festive de la première à la dernière chanson.</p>
+        <p>Une soir√©e √† votre image. Playlist sur-mesure, √©nergie calibr√©e pour votre public, ambiance festive de la premi√®re √† la derni√®re chanson.</p>
       </div>
       <div class="scard">
         <div class="scard-num">02</div>
-        <span class="scard-icon">🥂</span>
-        <h3>Soirées Privées</h3>
-        <p>Fête entre amis ou soirée plus intimiste, je m'adapte au mood du moment et monte la température au bon rythme.</p>
+        <span class="scard-icon">ü•Ç</span>
+        <h3>Soir√©es Priv√©es</h3>
+        <p>F√™te entre amis ou soir√©e plus intimiste, je m'adapte au mood du moment et monte la temp√©rature au bon rythme.</p>
       </div>
       <div class="scard">
         <div class="scard-num">03</div>
-        <span class="scard-icon">🏢</span>
-        <h3>Événements d'Entreprise</h3>
-        <p>Séminaires, team-buildings, soirées de fin d'année — une animation pro et mémorable pour fédérer vos équipes.</p>
+        <span class="scard-icon">üè¢</span>
+        <h3>√âv√©nements d'Entreprise</h3>
+        <p>S√©minaires, team-buildings, soir√©es de fin d'ann√©e ‚Äî une animation pro et m√©morable pour f√©d√©rer vos √©quipes.</p>
       </div>
     </div>
   </div>
@@ -729,18 +729,18 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
 <section id="materiel">
   <div class="inner">
     <div class="reveal">
-      <div class="stag">Matériel</div>
-      <h2 class="stitle">Équipement <span class="pop">pro</span></h2>
+      <div class="stag">Mat√©riel</div>
+      <h2 class="stitle">√âquipement <span class="pop">pro</span></h2>
     </div>
     <div class="gear-grid reveal">
-      <div class="gitem"><div class="gitem-icon">🎛️</div><div class="gitem-name">Platines DJ & Table de mixage</div><div class="gitem-desc">Mix en live, transitions fluides, ambiance constante</div></div>
-      <div class="gitem"><div class="gitem-icon">🔊</div><div class="gitem-name">Enceintes the box CL 110 Top MK II</div><div class="gitem-desc">200W RMS / 800W crête, large bande 2 voies 10"</div></div>
-      <div class="gitem"><div class="gitem-icon">🔉</div><div class="gitem-name">Caisson de basses CL 118 Sub MK II</div><div class="gitem-desc">18" actif — 350W RMS / 700W crête</div></div>
-      <div class="gitem"><div class="gitem-icon">💡</div><div class="gitem-name">Inno Pocket Spot Twins</div><div class="gitem-desc">Spots motorisés LED, effets synchronisés musique</div></div>
-      <div class="gitem"><div class="gitem-icon">🌟</div><div class="gitem-name">Projecteur Football RGBW</div><div class="gitem-desc">16x3W tête mobile, stroboscope double bras, DMX</div></div>
-      <div class="gitem"><div class="gitem-icon">🪩</div><div class="gitem-name">Deux boules à facettes électriques</div><div class="gitem-desc">Effet miroir classique, ambiance festive garantie</div></div>
-      <div class="gitem"><div class="gitem-icon">🌫️</div><div class="gitem-name">Machine à fumée</div><div class="gitem-desc">Sublime les effets lumineux en soirée</div></div>
-      <div class="gitem"><div class="gitem-icon">🔧</div><div class="gitem-name">Installation & Câblage sécurisé</div><div class="gitem-desc">Montage avant les invités, démontage inclus</div></div>
+      <div class="gitem"><div class="gitem-icon">üéõÔ∏è</div><div class="gitem-name">Platines DJ & Table de mixage</div><div class="gitem-desc">Mix en live, transitions fluides, ambiance constante</div></div>
+      <div class="gitem"><div class="gitem-icon">üîä</div><div class="gitem-name">Enceintes the box CL 110 Top MK II</div><div class="gitem-desc">200W RMS / 800W cr√™te, large bande 2 voies 10"</div></div>
+      <div class="gitem"><div class="gitem-icon">üîâ</div><div class="gitem-name">Caisson de basses CL 118 Sub MK II</div><div class="gitem-desc">18" actif ‚Äî 350W RMS / 700W cr√™te</div></div>
+      <div class="gitem"><div class="gitem-icon">üí°</div><div class="gitem-name">Inno Pocket Spot Twins</div><div class="gitem-desc">Spots motoris√©s LED, effets synchronis√©s musique</div></div>
+      <div class="gitem"><div class="gitem-icon">üåü</div><div class="gitem-name">Projecteur Football RGBW</div><div class="gitem-desc">16x3W t√™te mobile, stroboscope double bras, DMX</div></div>
+      <div class="gitem"><div class="gitem-icon">ü™©</div><div class="gitem-name">Deux boules √† facettes √©lectriques</div><div class="gitem-desc">Effet miroir classique, ambiance festive garantie</div></div>
+      <div class="gitem"><div class="gitem-icon">üå´Ô∏è</div><div class="gitem-name">Machine √† fum√©e</div><div class="gitem-desc">Sublime les effets lumineux en soir√©e</div></div>
+      <div class="gitem"><div class="gitem-icon">üîß</div><div class="gitem-name">Installation & C√¢blage s√©curis√©</div><div class="gitem-desc">Montage avant les invit√©s, d√©montage inclus</div></div>
     </div>
   </div>
 </section>
@@ -753,18 +753,18 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
       <h2 class="stitle">Une offre <span class="pop">sur-mesure</span></h2>
     </div>
     <div class="tarif-card reveal">
-      <h3>Devis personnalisé</h3>
-      <p class="tarif-sub">Chaque événement est unique. Contactez-moi et je vous reviens sous 24h avec une proposition adaptée à votre soirée, votre durée et votre lieu.</p>
+      <h3>Devis personnalis√©</h3>
+      <p class="tarif-sub">Chaque √©v√©nement est unique. Contactez-moi et je vous reviens sous 24h avec une proposition adapt√©e √† votre soir√©e, votre dur√©e et votre lieu.</p>
       <div class="tarif-grid">
-        <div class="titem">Prestation DJ complète</div>
-        <div class="titem">Matériel son professionnel</div>
-        <div class="titem">Jeux de lumières complets</div>
-        <div class="titem">Machine à fumée</div>
-        <div class="titem">Installation & désinstallation</div>
-        <div class="titem">Déplacement Lyon & alentours</div>
+        <div class="titem">Prestation DJ compl√®te</div>
+        <div class="titem">Mat√©riel son professionnel</div>
+        <div class="titem">Jeux de lumi√®res complets</div>
+        <div class="titem">Machine √† fum√©e</div>
+        <div class="titem">Installation & d√©sinstallation</div>
+        <div class="titem">D√©placement Lyon & alentours</div>
       </div>
-      <a href="#contact" class="btn-fire" style="display:inline-flex;">Demander un devis gratuit →</a>
-      <p class="tarif-note">Paiement par virement bancaire ou en espèces</p>
+      <a href="#contact" class="btn-fire" style="display:inline-flex;">Demander un devis gratuit ‚Üí</a>
+      <p class="tarif-note">Paiement par virement bancaire ou en esp√®ces</p>
     </div>
   </div>
 </section>
@@ -783,15 +783,15 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="avis-bg-q">"</div>
         <div class="avis-top">
           <div class="stars">
-            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span>
+            <span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span>
           </div>
           <span class="avis-score">5 / 5</span>
         </div>
-        <p class="avis-text">Titouan a mis le feu à ma soirée d'anniversaire ! Il a su lire la salle parfaitement, tout le monde a dansé jusqu'à la fin. Un vrai pro à l'écoute.</p>
+        <p class="avis-text">Titouan a mis le feu √† ma soir√©e d'anniversaire ! Il a su lire la salle parfaitement, tout le monde a dans√© jusqu'√† la fin. Un vrai pro √† l'√©coute.</p>
         <div class="avis-sep"></div>
         <div class="avis-author">
           <div class="avis-av">S</div>
-          <div><div class="avis-name">Sarah M.</div><div class="avis-event">Anniversaire 30 ans · Lyon</div></div>
+          <div><div class="avis-name">Sarah M.</div><div class="avis-event">Anniversaire 30 ans ¬∑ Lyon</div></div>
         </div>
       </div>
 
@@ -800,15 +800,15 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="avis-bg-q">"</div>
         <div class="avis-top">
           <div class="stars">
-            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half" style="background:linear-gradient(90deg,var(--yellow) 50%,transparent 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">★</span>
+            <span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star half" style="background:linear-gradient(90deg,var(--yellow) 50%,transparent 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">‚òÖ</span>
           </div>
           <span class="avis-score">4.5 / 5</span>
         </div>
-        <p class="avis-text">Super prestation pour notre soirée d'entreprise. Titouan a vraiment adapté la musique à notre public. La seule petite chose : l'installation a pris un peu plus de temps que prévu, mais rien de gênant.</p>
+        <p class="avis-text">Super prestation pour notre soir√©e d'entreprise. Titouan a vraiment adapt√© la musique √† notre public. La seule petite chose : l'installation a pris un peu plus de temps que pr√©vu, mais rien de g√™nant.</p>
         <div class="avis-sep"></div>
         <div class="avis-author">
           <div class="avis-av">L</div>
-          <div><div class="avis-name">Lucas D.</div><div class="avis-event">Soirée d'entreprise · Villeurbanne</div></div>
+          <div><div class="avis-name">Lucas D.</div><div class="avis-event">Soir√©e d'entreprise ¬∑ Villeurbanne</div></div>
         </div>
       </div>
 
@@ -817,15 +817,15 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="avis-bg-q">"</div>
         <div class="avis-top">
           <div class="stars">
-            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span>
+            <span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span>
           </div>
           <span class="avis-score">5 / 5</span>
         </div>
-        <p class="avis-text">Excellent DJ, très pro et sympa. Arrivé en avance pour l'installation, son impeccable et ambiance électrique. Je recommande les yeux fermés.</p>
+        <p class="avis-text">Excellent DJ, tr√®s pro et sympa. Arriv√© en avance pour l'installation, son impeccable et ambiance √©lectrique. Je recommande les yeux ferm√©s.</p>
         <div class="avis-sep"></div>
         <div class="avis-author">
           <div class="avis-av">C</div>
-          <div><div class="avis-name">Camille R.</div><div class="avis-event">Soirée privée · Ouest Lyonnais</div></div>
+          <div><div class="avis-name">Camille R.</div><div class="avis-event">Soir√©e priv√©e ¬∑ Ouest Lyonnais</div></div>
         </div>
       </div>
 
@@ -834,15 +834,15 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="avis-bg-q">"</div>
         <div class="avis-top">
           <div class="stars">
-            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star">★</span>
+            <span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star">‚òÖ</span>
           </div>
           <span class="avis-score">4 / 5</span>
         </div>
-        <p class="avis-text">Très bonne soirée, Titouan a géré une salle avec des invités de tous âges avec brio. Je retire juste une étoile car certains morceaux demandés en avance n'ont pas tous été joués.</p>
+        <p class="avis-text">Tr√®s bonne soir√©e, Titouan a g√©r√© une salle avec des invit√©s de tous √¢ges avec brio. Je retire juste une √©toile car certains morceaux demand√©s en avance n'ont pas tous √©t√© jou√©s.</p>
         <div class="avis-sep"></div>
         <div class="avis-author">
           <div class="avis-av">M</div>
-          <div><div class="avis-name">Marc & Julie P.</div><div class="avis-event">Anniversaire 50 ans · Lyon</div></div>
+          <div><div class="avis-name">Marc & Julie P.</div><div class="avis-event">Anniversaire 50 ans ¬∑ Lyon</div></div>
         </div>
       </div>
 
@@ -851,15 +851,15 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="avis-bg-q">"</div>
         <div class="avis-top">
           <div class="stars">
-            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span>
+            <span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span>
           </div>
           <span class="avis-score">5 / 5</span>
         </div>
-        <p class="avis-text">Vraiment au top. Le matériel était impeccable, le son puissant mais jamais agressif, et Titouan était souriant toute la soirée. On le recontacte sans hésiter.</p>
+        <p class="avis-text">Vraiment au top. Le mat√©riel √©tait impeccable, le son puissant mais jamais agressif, et Titouan √©tait souriant toute la soir√©e. On le recontacte sans h√©siter.</p>
         <div class="avis-sep"></div>
         <div class="avis-author">
           <div class="avis-av">A</div>
-          <div><div class="avis-name">Amélie V.</div><div class="avis-event">Soirée privée · Tassin-la-Demi-Lune</div></div>
+          <div><div class="avis-name">Am√©lie V.</div><div class="avis-event">Soir√©e priv√©e ¬∑ Tassin-la-Demi-Lune</div></div>
         </div>
       </div>
 
@@ -868,15 +868,15 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="avis-bg-q">"</div>
         <div class="avis-top">
           <div class="stars">
-            <span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star full">★</span><span class="star half" style="background:linear-gradient(90deg,var(--yellow) 50%,transparent 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">★</span>
+            <span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star full">‚òÖ</span><span class="star half" style="background:linear-gradient(90deg,var(--yellow) 50%,transparent 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">‚òÖ</span>
           </div>
           <span class="avis-score">4.5 / 5</span>
         </div>
-        <p class="avis-text">Titouan a animé notre team-building avec beaucoup d'énergie. Réactif et passionné. La piste de danse ne s'est pas vidée de la nuit !</p>
+        <p class="avis-text">Titouan a anim√© notre team-building avec beaucoup d'√©nergie. R√©actif et passionn√©. La piste de danse ne s'est pas vid√©e de la nuit !</p>
         <div class="avis-sep"></div>
         <div class="avis-author">
           <div class="avis-av">T</div>
-          <div><div class="avis-name">Thomas B.</div><div class="avis-event">Team-building · Lyon 6e</div></div>
+          <div><div class="avis-name">Thomas B.</div><div class="avis-event">Team-building ¬∑ Lyon 6e</div></div>
         </div>
       </div>
 
@@ -889,32 +889,32 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
   <div class="inner">
     <div class="contact-header reveal">
       <div class="stag">Contact</div>
-      <h2 class="stitle">Parlons de <span class="pop">votre soirée</span></h2>
-      <p>Remplissez le formulaire ou retrouvez mes coordonnées directes. Je réponds sous 24h.</p>
+      <h2 class="stitle">Parlons de <span class="pop">votre soir√©e</span></h2>
+      <p>Remplissez le formulaire ou retrouvez mes coordonn√©es directes. Je r√©ponds sous 24h.</p>
     </div>
 
     <div class="tab-nav reveal">
-      <button class="tab-btn active" onclick="switchTab('form',this)">📋 Demande de devis</button>
-      <button class="tab-btn" onclick="switchTab('info',this)">📞 Coordonnées</button>
+      <button class="tab-btn active" onclick="switchTab('form',this)">üìã Demande de devis</button>
+      <button class="tab-btn" onclick="switchTab('info',this)">üìû Coordonn√©es</button>
     </div>
 
     <!-- FORM -->
     <div class="tab-panel active" id="tab-form">
       <div class="frow">
-        <div class="ffield"><label>Prénom & Nom</label><input type="text" id="f-name" placeholder="Marie Dupont"></div>
+        <div class="ffield"><label>Pr√©nom & Nom</label><input type="text" id="f-name" placeholder="Marie Dupont"></div>
         <div class="ffield"><label>Email</label><input type="email" id="f-email" placeholder="votre@email.com"></div>
       </div>
       <div class="frow">
-        <div class="ffield"><label>Téléphone</label><input type="tel" id="f-phone" placeholder="06 XX XX XX XX"></div>
-        <div class="ffield"><label>Date de l'événement</label><input type="date" id="f-date"></div>
+        <div class="ffield"><label>T√©l√©phone</label><input type="tel" id="f-phone" placeholder="06 XX XX XX XX"></div>
+        <div class="ffield"><label>Date de l'√©v√©nement</label><input type="date" id="f-date"></div>
       </div>
       <div class="frow">
-        <div class="ffield"><label>Type d'événement</label>
+        <div class="ffield"><label>Type d'√©v√©nement</label>
           <select id="f-type">
             <option value="" disabled selected>Choisir...</option>
             <option>Anniversaire</option>
-            <option>Soirée privée</option>
-            <option>Événement d'entreprise</option>
+            <option>Soir√©e priv√©e</option>
+            <option>√âv√©nement d'entreprise</option>
             <option>Mariage</option>
             <option>Autre</option>
           </select>
@@ -925,23 +925,23 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="ffield"><label>Ambiance musicale</label>
           <select id="f-ambiance">
             <option value="" disabled selected>Choisir...</option>
-            <option>House / Électro</option>
+            <option>House / √âlectro</option>
             <option>R&B / Hip-Hop</option>
-            <option>Pop / Variété</option>
-            <option>Années 80–90–2000</option>
+            <option>Pop / Vari√©t√©</option>
+            <option>Ann√©es 80‚Äì90‚Äì2000</option>
             <option>Mix de plusieurs styles</option>
             <option>Libre (je fais confiance)</option>
           </select>
         </div>
-        <div class="ffield"><label>Nombre d'invités</label><input type="number" id="f-guests" placeholder="Ex : 50"></div>
+        <div class="ffield"><label>Nombre d'invit√©s</label><input type="number" id="f-guests" placeholder="Ex : 50"></div>
       </div>
       <div class="frow" style="grid-template-columns:1fr;">
-        <div class="ffield full"><label>Message & infos complémentaires</label><textarea id="f-message" rows="4" placeholder="Horaires, thème, demandes particulières..."></textarea></div>
+        <div class="ffield full"><label>Message & infos compl√©mentaires</label><textarea id="f-message" rows="4" placeholder="Horaires, th√®me, demandes particuli√®res..."></textarea></div>
       </div>
-      <div class="fsend"><button onclick="submitForm()">Envoyer ma demande →</button></div>
+      <div class="fsend"><button onclick="submitForm()">Envoyer ma demande ‚Üí</button></div>
       <div class="fsuccess" id="formSuccess">
-        <p>✓ Demande envoyée avec succès !</p>
-        <span>Le PDF de votre devis a été téléchargé et Titouan a reçu votre demande par email. Il vous recontacte sous 24h avec le tarif personnalisé.</span>
+        <p>‚úì Demande envoy√©e avec succ√®s !</p>
+        <span>Le PDF de votre devis a √©t√© t√©l√©charg√© et Titouan a re√ßu votre demande par email. Il vous recontacte sous 24h avec le tarif personnalis√©.</span>
       </div>
     </div>
 
@@ -949,24 +949,24 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
     <div class="tab-panel" id="tab-info">
       <div class="cinfo-grid">
         <div class="cinfo-item">
-          <div class="cinfo-icon">📍</div>
+          <div class="cinfo-icon">üìç</div>
           <h3>Zone d'intervention</h3>
-          <p>Lyon & Alentours<br><span style="font-size:14px;color:var(--muted);">Villeurbanne, Tassin, et toute la région lyonnaise</span></p>
+          <p>Lyon & Alentours<br><span style="font-size:14px;color:var(--muted);">Villeurbanne, Tassin, et toute la r√©gion lyonnaise</span></p>
         </div>
         <div class="cinfo-item">
-          <div class="cinfo-icon">📧</div>
+          <div class="cinfo-icon">üìß</div>
           <h3>Email</h3>
           <a href="mailto:titouanphelip@gmail.com">titouanphelip@gmail.com</a>
         </div>
         <div class="cinfo-item">
-          <div class="cinfo-icon">⏰</div>
-          <h3>Disponibilité</h3>
-          <p>Toute la semaine<br><span style="font-size:14px;color:var(--muted);">Sur réservation</span></p>
+          <div class="cinfo-icon">‚è∞</div>
+          <h3>Disponibilit√©</h3>
+          <p>Toute la semaine<br><span style="font-size:14px;color:var(--muted);">Sur r√©servation</span></p>
         </div>
         <div class="cinfo-item">
-          <div class="cinfo-icon">💳</div>
+          <div class="cinfo-icon">üí≥</div>
           <h3>Paiement</h3>
-          <p>Virement bancaire<br><span style="font-size:14px;color:var(--muted);">ou espèces</span></p>
+          <p>Virement bancaire<br><span style="font-size:14px;color:var(--muted);">ou esp√®ces</span></p>
         </div>
       </div>
     </div>
@@ -976,59 +976,59 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Titouan <span>Phelip</span></div>
-  <p>© 2026 · DJ Professionnel · Lyon & Région</p>
-  <p>Tous droits réservés</p>
+  <p>¬© 2026 ¬∑ DJ Professionnel ¬∑ Lyon & R√©gion</p>
+  <p>Tous droits r√©serv√©s</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" crossorigin="anonymous"></script>
 <script>
-// Fallback : si jsPDF n'a pas chargé, on réessaie depuis un autre CDN
+// Fallback : si jsPDF n'a pas charg√©, on r√©essaie depuis un autre CDN
 if(!window.jspdf){
   var s=document.createElement('script');
-  s.src='https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js';
+  s.src='https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
   document.head.appendChild(s);
 }
 </script>
 <script>
 
-// ════════════════════════════════════════════════════════════
-// ⚠️  CONFIGURATION EMAILJS — À REMPLIR PAR TITOUAN
-// ════════════════════════════════════════════════════════════
-// 1. Va sur https://www.emailjs.com et crée un compte gratuit
-// 2. Ajoute un "Email Service" (Gmail) → copie le Service ID
-// 3. Crée un "Email Template" avec ce contenu :
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+// ‚ö†Ô∏è  CONFIGURATION EMAILJS ‚Äî √Ä REMPLIR PAR TITOUAN
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
+// 1. Va sur https://www.emailjs.com et cr√©e un compte gratuit
+// 2. Ajoute un "Email Service" (Gmail) ‚Üí copie le Service ID
+// 3. Cr√©e un "Email Template" avec ce contenu :
 //
-//    Sujet : 🎧 Nouvelle demande de devis — {{event_type}} le {{event_date}}
+//    Sujet : üéß Nouvelle demande de devis ‚Äî {{event_type}} le {{event_date}}
 //
 //    Corps :
-//    Nouvelle demande de devis reçue !
+//    Nouvelle demande de devis re√ßue !
 //
-//    👤 Client : {{client_name}}
-//    📧 Email : {{client_email}}
-//    📞 Téléphone : {{client_phone}}
+//    üë§ Client : {{client_name}}
+//    üìß Email : {{client_email}}
+//    üìû T√©l√©phone : {{client_phone}}
 //
-//    📅 Date : {{event_date}}
-//    🎉 Type : {{event_type}}
-//    📍 Lieu : {{event_lieu}}
-//    🎵 Ambiance : {{event_ambiance}}
-//    👥 Invités : {{event_guests}}
+//    üìÖ Date : {{event_date}}
+//    üéâ Type : {{event_type}}
+//    üìç Lieu : {{event_lieu}}
+//    üéµ Ambiance : {{event_ambiance}}
+//    üë• Invit√©s : {{event_guests}}
 //
-//    💬 Message :
+//    üí¨ Message :
 //    {{client_message}}
 //
 //    ---
-//    N° Devis : {{devis_num}}
+//    N¬∞ Devis : {{devis_num}}
 //
 // 4. Copie le Template ID
-// 5. Va dans Account → copie ta Public Key
+// 5. Va dans Account ‚Üí copie ta Public Key
 // 6. Remplace les 3 valeurs ci-dessous :
 
 const EMAILJS_PUBLIC_KEY = 'gElTV21XlltKS9zr0';
 const EMAILJS_SERVICE_ID = 'service_5p2ypfa';
 const EMAILJS_TEMPLATE_ID = 'template_v2tpcwl';
 
-// ════════════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
@@ -1040,9 +1040,9 @@ function switchTab(name,btn){
 }
 
 function formatDateFR(dateStr){
-  if(!dateStr) return '—';
+  if(!dateStr) return '‚Äî';
   const d=new Date(dateStr);
-  const months=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  const months=['janvier','f√©vrier','mars','avril','mai','juin','juillet','ao√ªt','septembre','octobre','novembre','d√©cembre'];
   return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
 }
 
@@ -1058,15 +1058,15 @@ function generateDevisPDF(data){
   const today = new Date();
   const devisNum = 'DEV-' + today.getFullYear() + '-' + String(today.getMonth()+1).padStart(2,'0') + String(today.getDate()).padStart(2,'0') + '-' + String(Math.floor(Math.random()*9000)+1000);
 
-  // ── BG
+  // ‚îÄ‚îÄ BG
   doc.setFillColor(...dark);
   doc.rect(0,0,W,H,'F');
 
-  // ── TOP ORANGE BAR
+  // ‚îÄ‚îÄ TOP ORANGE BAR
   doc.setFillColor(...orange);
   doc.rect(0,0,W,4,'F');
 
-  // ── HEADER
+  // ‚îÄ‚îÄ HEADER
   doc.setFont('helvetica','bold');
   doc.setFontSize(28);
   doc.setTextColor(...white);
@@ -1094,13 +1094,13 @@ function generateDevisPDF(data){
   doc.setTextColor(...muted);
   doc.text(formatDateFR(today.toISOString().slice(0,10)), W-70, 37);
 
-  // ── SEPARATOR
+  // ‚îÄ‚îÄ SEPARATOR
   let y = 50;
   doc.setDrawColor(...orange);
   doc.setLineWidth(0.3);
   doc.line(20, y, W-20, y);
 
-  // ── CLIENT INFO SECTION
+  // ‚îÄ‚îÄ CLIENT INFO SECTION
   y += 14;
   doc.setFont('helvetica','bold');
   doc.setFontSize(8);
@@ -1154,7 +1154,7 @@ function generateDevisPDF(data){
 
   y += 60;
 
-  // ── PRESTATIONS TABLE
+  // ‚îÄ‚îÄ PRESTATIONS TABLE
   y += 8;
   doc.setFont('helvetica','bold');
   doc.setFontSize(8);
@@ -1214,7 +1214,7 @@ function generateDevisPDF(data){
   doc.setFontSize(13);
   doc.text('\u20ac __________', W-70, y+4);
 
-  // ── MESSAGE
+  // ‚îÄ‚îÄ MESSAGE
   y += 24;
   if(data.message){
     doc.setFont('helvetica','bold');
@@ -1233,7 +1233,7 @@ function generateDevisPDF(data){
     y += msgH + 8;
   }
 
-  // ── CONDITIONS
+  // ‚îÄ‚îÄ CONDITIONS
   y += 4;
   doc.setFont('helvetica','bold');
   doc.setFontSize(8);
@@ -1255,7 +1255,7 @@ function generateDevisPDF(data){
     doc.text(c, 28, y + 4 + i*7);
   });
 
-  // ── FOOTER BAR
+  // ‚îÄ‚îÄ FOOTER BAR
   doc.setFillColor(...card);
   doc.rect(0, H-20, W, 20, 'F');
   doc.setFillColor(...orange);
@@ -1270,7 +1270,7 @@ function generateDevisPDF(data){
   doc.text('DJ Professionnel \u00b7 Lyon & R\u00e9gion \u00b7 titouanphelip@gmail.com', 20, H-5);
   doc.text('Devis ' + devisNum, W-60, H-10);
 
-  // ── SAVE
+  // ‚îÄ‚îÄ SAVE
   doc.save('Devis_' + data.name.replace(/\s+/g,'_') + '_' + devisNum + '.pdf');
 }
 
@@ -1286,13 +1286,13 @@ function submitForm(){
   const message=document.getElementById('f-message').value.trim();
 
   if(!name||!email||!type||!date){
-    alert('Merci de remplir au minimum : nom, email, type d\'événement et date.');
+    alert('Merci de remplir au minimum : nom, email, type d\'√©v√©nement et date.');
     return;
   }
 
-  // Vérifier que jsPDF est chargé
+  // V√©rifier que jsPDF est charg√©
   if(!window.jspdf){
-    alert('Le module PDF n\'a pas fini de charger. Veuillez patienter 2 secondes et réessayer.');
+    alert('Le module PDF n\'a pas fini de charger. Veuillez patienter 2 secondes et r√©essayer.');
     return;
   }
 
@@ -1315,12 +1315,12 @@ function submitForm(){
     const templateParams = {
       client_name: name,
       client_email: email,
-      client_phone: phone || 'Non renseigné',
+      client_phone: phone || 'Non renseign√©',
       event_date: formatDateFR(date),
       event_type: type,
-      event_lieu: lieu || 'Non renseigné',
-      event_ambiance: ambiance || 'Non renseigné',
-      event_guests: guests ? guests + ' personnes' : 'Non renseigné',
+      event_lieu: lieu || 'Non renseign√©',
+      event_ambiance: ambiance || 'Non renseign√©',
+      event_guests: guests ? guests + ' personnes' : 'Non renseign√©',
       client_message: message || 'Aucun message',
       devis_num: devisNum
     };
@@ -1338,7 +1338,7 @@ function submitForm(){
         document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
       });
   } else {
-    // EmailJS pas chargé, on montre quand même le succès (le PDF a été généré)
+    // EmailJS pas charg√©, on montre quand m√™me le succ√®s (le PDF a √©t√© g√©n√©r√©)
     btn.style.display='none';
     document.getElementById('formSuccess').classList.add('show');
     document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
