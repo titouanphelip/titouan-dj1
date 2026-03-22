@@ -659,7 +659,7 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
       <div class="hstat-l">Ans d'expérience</div>
     </div>
     <div class="hstat">
-      <div class="hstat-n">4</div>
+      <div class="hstat-n">4+</div>
       <div class="hstat-l">Styles musicaux</div>
     </div>
     <div class="hstat">
@@ -712,7 +712,7 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
         <div class="aq-name">— Titouan Phelip</div>
       </div>
       <div class="about-stats-row">
-        <div class="as-box"><div class="as-n">2+</div><div class="as-l">Expérience</div></div>
+        <div class="as-box"><div class="as-n">2+</div><div class="as-l">Ans d'expérience</div></div>
         <div class="as-box"><div class="as-n">Lyon</div><div class="as-l">Zone</div></div>
         <div class="as-box"><div class="as-n">100%</div><div class="as-l">Sur-mesure</div></div>
       </div>
@@ -966,7 +966,7 @@ footer p{font-size:12px;font-weight:300;color:var(--muted);}
       <div class="fsend"><button onclick="submitForm()">Envoyer ma demande →</button></div>
       <div class="fsuccess" id="formSuccess">
         <p>✓ Demande envoyée avec succès !</p>
-        <span>Le PDF de votre devis a été téléchargé et Titouan a reçu votre demande par email. Il vous recontacte sous 24h avec le tarif personnalisé.</span>
+        <span>Votre demande a bien été envoyée ! Titouan vous recontacte sous 24h avec un devis personnalisé.</span>
       </div>
     </div>
 
@@ -1272,14 +1272,14 @@ function generateDevisPDF(data){
   }
 
   // ── CONDITIONS (ancrées au-dessus du footer)
-  y = H - 75;
+  y = H - 85;
   doc.setFont('helvetica','bold');
   doc.setFontSize(8);
   doc.setTextColor(...orange);
   doc.text('CONDITIONS', 20, y);
   y += 8;
   doc.setFillColor(...card);
-  doc.roundedRect(20, y-4, W-40, 34, 2, 2, 'F');
+  doc.roundedRect(20, y-4, W-40, 38, 2, 2, 'F');
   doc.setFont('helvetica','normal');
   doc.setFontSize(8);
   doc.setTextColor(...muted);
@@ -1328,12 +1328,6 @@ function submitForm(){
     return;
   }
 
-  // Vérifier que jsPDF est chargé
-  if(!window.jspdf){
-    alert('Le module PDF n\'a pas fini de charger. Veuillez patienter 2 secondes et réessayer.');
-    return;
-  }
-
   const btn = document.querySelector('.fsend button');
   btn.textContent = 'Envoi en cours...';
   btn.disabled = true;
@@ -1341,12 +1335,7 @@ function submitForm(){
 
   const devisNum = 'DEV-' + new Date().getFullYear() + '-' + String(new Date().getMonth()+1).padStart(2,'0') + String(new Date().getDate()).padStart(2,'0') + '-' + String(Math.floor(Math.random()*9000)+1000);
 
-  // Generate PDF
-  try {
-    generateDevisPDF({ name, email, phone, date, type, lieu, ambiance, guests, message });
-  } catch(e) {
-    console.error('Erreur PDF:', e);
-  }
+  // PAS de PDF envoyé au client — c'est Titouan qui envoie le devis manuellement
 
   // Envoi email via formsubmit.co
   const formData = new FormData();
